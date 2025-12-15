@@ -2,15 +2,18 @@
 import os
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-def create_project(project_name: str, target_dir: str = "."):
+def create_project(project_name: str, template_name: str = "basic", target_dir: str = "."):
     """
-    Generates a new Python project from templates.
+    Generates a new Python project from a specified template.
     """
-    # 1. Set up Jinja2 environment
-    # This tells Jinja2 where to find our template files
-    template_dir = os.path.join(os.path.dirname(__file__), "templates")
+    # 1. Set up Jinja2 environment for the specified template
+    # The path now includes the template_name
+    template_path = os.path.join(os.path.dirname(__file__), "templates", template_name)
+    if not os.path.exists(template_path):
+        raise ValueError(f"Template '{template_name}' not found at {template_path}")
+
     env = Environment(
-        loader=FileSystemLoader(template_dir),
+        loader=FileSystemLoader(template_path),
         autoescape=select_autoescape(),
         trim_blocks=True,
         lstrip_blocks=True
@@ -29,13 +32,14 @@ def create_project(project_name: str, target_dir: str = "."):
     print(f"✅ Created source directory: {src_path}")
 
     # 4. Render and write the files
-    # Top-level files
+    # We now look for files inside the specific template directory
     render_and_write(env, "pyproject.toml.j2", project_path, "pyproject.toml", project_name=project_name)
     render_and_write(env, "README.md.j2", project_path, "README.md", project_name=project_name)
     render_and_write(env, ".gitignore.j2", project_path, ".gitignore", project_name=project_name)
 
-    # Files inside src directory
-    render_and_write(env, "main.py.j2", src_path, "main.py", project_name=project_name)
+    # Check if the template has a main.py.j2 before trying to render it
+    if os.path.exists(os.path.join(template_path, "main.py.j2")):
+        render_and_write(env, "main.py.j2", src_path, "main.py", project_name=project_name)
 
     # Create __init__.py file (it's empty, so no template needed)
     with open(os.path.join(src_path, "__init__.py"), "w") as f:

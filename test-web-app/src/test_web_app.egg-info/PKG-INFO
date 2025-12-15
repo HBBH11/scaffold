@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: test_web_app
+Version: 0.1.0
+Summary: A new FastAPI project.
+Author-email: Your Name <you@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+
+Test-Web-App
+A new FastAPI project.
+Running the app
+uvicorn test_web_app.main:app --reload
+Then visit http://127.0.0.1:8000 in your browser.
