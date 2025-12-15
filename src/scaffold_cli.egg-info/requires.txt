@@ -1,5 +1,7 @@
 click
 jinja2
+rich
+GitPython
 
 [dev]
 pytest

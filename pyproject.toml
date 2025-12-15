@@ -19,8 +19,9 @@ classifiers = [
 dependencies = [
     "click",
     "jinja2",
+    "rich",
+    "GitPython",
 ]
-
 [project.optional-dependencies]
 dev = [
     "pytest",
