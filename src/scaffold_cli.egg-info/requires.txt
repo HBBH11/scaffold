@@ -1,2 +1,6 @@
 click
 jinja2
+
+[dev]
+pytest
+pytest-mock

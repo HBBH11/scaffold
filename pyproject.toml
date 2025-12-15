@@ -21,5 +21,11 @@ dependencies = [
     "jinja2",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-mock", # A useful companion for testing
+]
+
 [project.scripts]
 scaffold = "scaffold.cli:cli"
