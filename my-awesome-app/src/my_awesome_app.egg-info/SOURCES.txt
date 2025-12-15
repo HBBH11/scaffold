@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/my_awesome_app/__init__.py
+src/my_awesome_app/main.py
+src/my_awesome_app.egg-info/PKG-INFO
+src/my_awesome_app.egg-info/SOURCES.txt
+src/my_awesome_app.egg-info/dependency_links.txt
+src/my_awesome_app.egg-info/top_level.txt

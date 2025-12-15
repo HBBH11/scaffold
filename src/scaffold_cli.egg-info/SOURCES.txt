@@ -1,0 +1,9 @@
+pyproject.toml
+src/scaffold/cli.py
+src/scaffold/generator.py
+src/scaffold_cli.egg-info/PKG-INFO
+src/scaffold_cli.egg-info/SOURCES.txt
+src/scaffold_cli.egg-info/dependency_links.txt
+src/scaffold_cli.egg-info/entry_points.txt
+src/scaffold_cli.egg-info/requires.txt
+src/scaffold_cli.egg-info/top_level.txt

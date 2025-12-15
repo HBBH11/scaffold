@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scaffold-cli"
+version = "0.1.0"
+authors = [
+    { name = "HBBH11", email = "bayram.hamrouni@isitc.u-sousse.tn" }, 
+]
+description = "A simple CLI tool to scaffold new Python projects."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click",
+    "jinja2",
+]
+
+[project.scripts]
+scaffold = "scaffold.cli:cli"
