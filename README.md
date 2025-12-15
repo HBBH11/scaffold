@@ -38,14 +38,14 @@ Creating file: pyproject.toml ... done.
 
 Scaffold creates a modern Python project layout that follows best practices.
 
-my-web-app/
+" my-web-app/
 ├── .gitignore
 ├── README.md
 ├── pyproject.toml
 └── src/
     └── my_web_app/
         ├── __init__.py
-        └── main.py
+        └── main.py "
 
 * src layout: Prevents many common packaging issues.
 
