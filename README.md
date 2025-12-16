@@ -81,7 +81,7 @@ After you've updated the `README.md` on GitHub, let's save this milestone locall
 
 ```powershell
 git add .
-git commit -m "Feat: Add rich UI and update README with new features"
+git commit -m 
 git push origin main
 
 
